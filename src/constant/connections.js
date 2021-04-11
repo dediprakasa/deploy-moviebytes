@@ -1,10 +1,8 @@
 import axios from "axios";
 import env from "react-dotenv";
 
-console.log(env);
-
 const callOmdbApi = axios.create({
-  baseURL: `http://www.omdbapi.com/?apikey=${env.API_KEY}&`,
+  baseURL: `http://www.omdbapi.com/?apikey=5f3e1158&`,
 });
 
 export default callOmdbApi;
