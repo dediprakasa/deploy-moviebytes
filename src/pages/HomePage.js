@@ -25,7 +25,6 @@ const HomePage = () => {
           {error}
         </Alert>
       )}
-      {loading && <h2>Loading...</h2>}
       <MovieList
         movieList={movieList}
         dataLength={dataLength}
@@ -34,6 +33,7 @@ const HomePage = () => {
         pageNumber={pageNumber}
         loading={loading}
       />
+      {loading && <h2>Loading...</h2>}
     </Col>
   );
 };
