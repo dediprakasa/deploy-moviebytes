@@ -41,6 +41,7 @@ const SearchForm = () => {
   return (
     <Form inline onSubmit={searchAction}>
       <FormControl
+        data-testid="search-form"
         value={keyword}
         onChange={inputHandler}
         type="text"
@@ -63,7 +64,7 @@ const SearchForm = () => {
           )}
         </div>
       )}
-      <Button type="submit" variant="info">
+      <Button data-testid="btn-search" type="submit" variant="info">
         Search
       </Button>
     </Form>

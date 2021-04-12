@@ -5,17 +5,24 @@ import PosterNotFound from "../../assets/img/notfound.jpg";
 
 const PosterModal = (props) => {
   return (
-    <Modal show={props.show} onHide={props.handleClose}>
+    <Modal
+      data-testid="show-modal"
+      show={props.show}
+      onHide={props.handleClose}
+    >
       <Modal.Header closeButton>
-        <Modal.Title>{props.movie.title}</Modal.Title>
+        <Modal.Title data-testid="poster-title">
+          {props.movie?.title}
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Col md={8} className="mx-auto">
           <Image
+            data-testid="poster-image"
             style={{ width: 300 }}
             src={
-              props.movie.poster !== "N/A" && props.movie.poster
-                ? props.movie.poster
+              props.movie?.poster !== "N/A" && props.movie?.poster
+                ? props.movie?.poster
                 : PosterNotFound
             }
           />
@@ -33,6 +40,7 @@ const PosterModal = (props) => {
 PosterModal.propTypes = {
   show: PropTypes.bool,
   handleClose: PropTypes.func,
+  movie: PropTypes.object,
 };
 
 export default PosterModal;

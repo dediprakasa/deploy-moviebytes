@@ -18,6 +18,7 @@ const MovieCard = (props) => {
   return (
     <Card className={`col-md-${props.columnSize} my-4 py-2 cardBox`}>
       <Card.Img
+        data-testid="poster"
         style={{ cursor: "pointer" }}
         onClick={() =>
           openPosterModal({ poster: props.poster, title: props.title })
@@ -28,11 +29,16 @@ const MovieCard = (props) => {
         }
       />
       <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text>{props.year}</Card.Text>
+        <Card.Title data-testid="title">{props.title}</Card.Title>
+        <Card.Text data-testid="year">{props.year}</Card.Text>
       </Card.Body>
       {props.movieId && (
-        <Button as={Link} to={`/detail/${props.movieId}`} variant="info">
+        <Button
+          data-testid="btn-detail"
+          as={Link}
+          to={`/detail/${props.movieId}`}
+          variant="info"
+        >
           Detail
         </Button>
       )}
@@ -50,7 +56,7 @@ const MovieCard = (props) => {
 MovieCard.propTypes = {
   poster: PropTypes.string,
   title: PropTypes.string,
-  year: PropTypes.number,
+  year: PropTypes.string,
   columnSize: PropTypes.oneOf([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
   movieId: PropTypes.string,
 };

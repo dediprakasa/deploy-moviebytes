@@ -21,7 +21,11 @@ const HomePage = () => {
   return (
     <Col md={10} className="mx-auto my-4">
       {error && (
-        <Alert className="text-left" variant={"danger"}>
+        <Alert
+          data-testid="error-text"
+          className="text-left"
+          variant={"danger"}
+        >
           {error}
         </Alert>
       )}

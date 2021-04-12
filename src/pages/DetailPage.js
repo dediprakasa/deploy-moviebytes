@@ -60,7 +60,7 @@ const DetailPage = () => {
               columnSize={12}
             />
           </Col>
-          <Col md={8} className="detailBox">
+          <Col data-testid="detailBox" md={8} className="detailBox">
             <h4 className="text-center py-4">Movie Detail</h4>
             {detailMovie &&
               plotDetail.map((detail, i) => (

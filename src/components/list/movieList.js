@@ -28,6 +28,7 @@ const MovieList = (props) => {
           return (
             <React.Fragment>
               <MovieCard
+                data-testid="movie-card"
                 key={i}
                 poster={movie.Poster}
                 title={movie.Title}
