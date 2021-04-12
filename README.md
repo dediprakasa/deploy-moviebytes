@@ -24,10 +24,6 @@ Path: https://omdbapi.com
 1. When you click search button and the keyword is empty it will be show error example : '[ Incorrect IMDb ID.] Please search another keyword for example: Batman'
 2. Infinite scroll sometime late.
 
-## Need Improvement
-
-1. Unit Test
-
 ## Custom Hooks
 
 1. useDisplayMovie, the function is to display movie every query change or pageNumber change.
