@@ -1,10 +1,14 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Alert } from "react-bootstrap";
 import { MovieList } from "../components";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useDisplayMovie } from "../customHooks";
+import { useHistory } from "react-router-dom";
+import { clearMovieList } from "../store/actions/movie";
 
 const HomePage = () => {
+  const history = useHistory();
+  const dispatch = useDispatch();
   const [pageNumber, setPageNumber] = useState(1);
 
   const {
@@ -15,6 +19,10 @@ const HomePage = () => {
     query,
     error,
   } = useSelector((state) => state.movieReducer);
+
+  useEffect(() => {
+    return dispatch(clearMovieList());
+  }, [history]);
 
   useDisplayMovie(query, pageNumber);
 

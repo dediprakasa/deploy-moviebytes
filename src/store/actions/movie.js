@@ -34,6 +34,10 @@ const requestData = (error) => ({
   type: "REQUEST_DATA",
 });
 
+export const clearMovieList = () => ({
+  type: "CLEAR_MOVIE_LIST",
+});
+
 export const changeQuery = (query) => ({
   type: "CHANGE_QUERY",
   query,
@@ -48,6 +52,7 @@ export const getMovieList = (query = "", pageNumber = 1, type) => {
         method: "GET",
         params: { s: query, page: pageNumber },
       });
+      console.log(data, query, pageNumber);
       if (data) {
         if (data.Response == "True") {
           if (type == "add")

@@ -11,7 +11,7 @@ const useDisplayMovie = (query, pageNumber) => {
   }, []);
 
   useEffect(() => {
-    dispatch(getMovieList(query, pageNumber, "get"));
+    dispatch(getMovieList(query, 1, "get"));
   }, [query]);
 
   useEffect(() => {

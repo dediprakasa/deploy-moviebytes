@@ -12,12 +12,21 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case "CLEAR_MOVIE_LIST":
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        movieList: [],
+        dataLength: 0,
+        totalResult: 0,
+        query: "Batman",
+      };
     case "SET_MOVIE_LIST":
       return {
         ...state,
         loading: false,
         error: null,
-        pageNumber: action.page,
         movieList: action.movies,
         dataLength: action.length,
         totalResult: action.totalResult,
@@ -27,7 +36,6 @@ export default (state = initialState, action) => {
         ...state,
         loading: false,
         error: null,
-        pageNumber: action.page,
         movieList: state.movieList.concat(action.movies),
         dataLength: state.dataLength + action.length,
       };
