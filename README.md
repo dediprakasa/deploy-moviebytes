@@ -4,7 +4,7 @@ Arona Nur Tetulis
 
 ## Deploy Pages
 
-website: https://deploy-moviebytes-qa33cnbdo-aronanurtetulis.vercel.app
+website: https://deploy-moviebytes.vercel.app/
 
 ## 3rd Api's
 
